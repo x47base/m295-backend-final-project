@@ -18,6 +18,11 @@ class Task {
     }
 }
 
+const exampledate = new Date();
+exampledate.setFullYear(2024, 4, 20);
+exampledate.setHours(12, 0, 0);
+tasks.push(new Task('Math Homework', 'The math homework by Mr. Timo Reichert have to be done', false, exampledate));
+
 /* Middleware(s) */
 
 /* API Endpoints */
