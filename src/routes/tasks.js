@@ -70,7 +70,39 @@ router.get('/:id', (req, res) => {
     }
 });
 
-router.put('/:id', (req, res) => {});
+router.put('/:id', (req, res) => {
+    if (!req.params.id || req.body == {}) {
+        return res.sendStatus(400);
+    }
+
+    const id = parseInt(req.params.id);
+
+    const {title, description, done, duedate} = req.body;
+
+    if (!title || !description || !done || !duedate) {
+        return res.sendStatus(400);
+    }
+
+    try {
+        const task = tasks.filter(task => task.id === id)[0];
+
+        if (task === undefined) {
+            return res.sendStatus(404);
+        }
+
+        const index = tasks.findIndex(taskItem => taskItem === task);
+
+        tasks[index].title = title ? title : task.title;
+        tasks[index].description = description ? description : task.description;
+        tasks[index].done = description ? description : task.description;
+        tasks[index].duedate = duedate ? duedate : task.duedate;
+
+        return res.sendStatus(200);
+    } catch (error) {
+        console.warn(error);
+        return res.sendStatus(500);
+    }
+});
 
 router.delete('/:id', (req, res) => {});
 
