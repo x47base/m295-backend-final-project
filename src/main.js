@@ -84,7 +84,15 @@ app.post('/login', (req, res) => {
 
 app.get('/verify', authenticateToken, (req, res) => res.sendStatus(200));
 
-app.delete('/logout', authenticateToken, (req, res) => {});
+app.delete('/logout', authenticateToken, (req, res) => {
+    req.session.destroy(error => {
+        if (error) {
+            return res.sendStatus(500);
+        }
+
+        return res.sendStatus(200);
+    });
+});
 
 /* Swagger API Documentation */
 app.use('/api-docs', swaggerUi.serve, swaggerUi.setup(swaggerDocument));
