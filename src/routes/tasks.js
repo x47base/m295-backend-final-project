@@ -26,7 +26,7 @@ tasks.push(new Task('Math Homework', 'The math homework by Mr. Timo Reichert hav
 /* Middleware(s) */
 
 /* API Endpoints */
-router.get('/', (req, res) => {});
+router.get('/', (req, res) => res.status(200).send(tasks));
 
 router.post('/', (req, res) => {});
 
