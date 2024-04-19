@@ -9,9 +9,14 @@ Author: Samuel Spink
 
 ## API Dokumentation
 Swagger-HTML-File: `.\src\docs\Swagger-Documentation.html`
+
 Swagger-JSON-File: `.\src\docs\swagger.json`
+
 Api: [API-Endpoint-Link](http://localhost:3000/api-docs)
 
 ## Testing
 Tool: `Insomnia`
+
 Request-Collection-File: `.\src\docs\Insomnia_2024-04-19.json`
+
+Error-Request-Collection-File: `.\src\docs\Insomnia_2024-04-19-error-cases.json`

@@ -59,7 +59,7 @@ app.post('/login', (req, res) => {
         return res.sendStatus(422);
     }
 
-    if (username !== USERNAME && password !== PASSWORD) {
+    if (!(username === USERNAME && password === PASSWORD)) {
         return res.sendStatus(401);
     }
 
