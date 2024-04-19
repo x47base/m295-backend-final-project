@@ -17,4 +17,4 @@ Tool: `Insomnia`
 Request-Collection-File: `.\src\docs\Insomnia_2024-04-19.json`
 
 ## Git Logs
-File: `.\GIT-LOGS.txt`
+File: `.\VCS.txt`
