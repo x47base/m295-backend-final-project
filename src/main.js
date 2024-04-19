@@ -82,7 +82,7 @@ app.post('/login', (req, res) => {
     }
 });
 
-app.get('/verify', authenticateToken, (req, res) => {});
+app.get('/verify', authenticateToken, (req, res) => res.sendStatus(200));
 
 app.delete('/logout', authenticateToken, (req, res) => {});
 
