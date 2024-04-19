@@ -28,7 +28,26 @@ tasks.push(new Task('Math Homework', 'The math homework by Mr. Timo Reichert hav
 /* API Endpoints */
 router.get('/', (req, res) => res.status(200).send(tasks));
 
-router.post('/', (req, res) => {});
+router.post('/', (req, res) => {
+    if (req.body == {}) {
+        return res.sendStatus(400);
+    }
+
+    const {title, description, done, duedate} = req.body;
+
+    if (!title || !description || !done || !duedate) {
+        return res.sendStatus(400);
+    }
+
+    const task = new Task(title, description, Boolean(done), Object(duedate));
+
+    if (task == {}) {
+        return res.sendStatus(422);
+    } else {
+        tasks.push(task);
+        return res.sendStatus(201);
+    }
+});
 
 router.get('/:id', (req, res) => {});
 
