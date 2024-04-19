@@ -8,7 +8,14 @@ const tasks = [
 ];
 
 class Task {
-    
+    constructor(title, description, done, duedate) {
+        this.id = tasks.length + 1;
+        this.title = title;
+        this.description = description;
+        this.done = done;
+        this.duedate = duedate;
+        this.createdAt = Date.now();
+    }
 }
 
 /* Middleware(s) */
