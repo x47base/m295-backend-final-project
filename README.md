@@ -12,6 +12,12 @@ Collection-Datei: .\src\docs\Insomnia_2024-04-19.json
 ## Git Logs
 Datei: .\GIT-LOGS.txt
 ```
+commit a10264bfac014c6b2a0c97710d793a0576b95624
+Author: Samuel Spink <dr.greenjet@gmail.com>
+Date:   Fri Apr 19 13:44:47 2024 +0200
+
+    docs: git-logs added
+
 commit 57f3eea140d6a754405176c901f8e05ed10c6958
 Author: Samuel Spink <dr.greenjet@gmail.com>
 Date:   Fri Apr 19 13:42:20 2024 +0200
@@ -22,7 +28,7 @@ commit 7ef5107ae17a69f57f768f539f997d11f75588b3
 Author: Samuel Spink <dr.greenjet@gmail.com>
 Date:   Fri Apr 19 13:41:32 2024 +0200
 
-    docs: swagger documentation generated
+    feat: swagger documentation generated
 
 commit 45315f0fb5af79a4358a431b8dbbe6d68cb87e03
 Author: Samuel Spink <dr.greenjet@gmail.com>
