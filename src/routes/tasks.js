@@ -104,6 +104,30 @@ router.put('/:id', (req, res) => {
     }
 });
 
-router.delete('/:id', (req, res) => {});
+router.delete('/:id', (req, res) => {
+    if (req.params.id === null) {
+        return res.sendStatus(400);
+    }
+
+    const id = parseInt(req.params.id);
+
+    const task = tasks.filter(task => task.id === id)[0];
+
+    if (task === undefined) {
+        return res.sendStatus(404);
+    }
+
+    const index = tasks.findIndex(taskItem => taskItem === task);
+
+    if (index > -1) {
+        try {
+            tasks.splice(index, 1);
+            return res.sendStatus(200);
+        } catch (error) {
+            console.warn(error);
+            return res.sendStatus(500);
+        }
+    }
+});
 
 module.exports = router;
