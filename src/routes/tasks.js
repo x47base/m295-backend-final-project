@@ -49,7 +49,26 @@ router.post('/', (req, res) => {
     }
 });
 
-router.get('/:id', (req, res) => {});
+router.get('/:id', (req, res) => {
+    if (!req.params.id) {
+        return res.sendStatus(400);
+    }
+
+    const id = parseInt(req.params.id);
+
+    try {
+        const task = tasks.filter(task => task.id === id)[0];
+
+        if (task === undefined) {
+            return res.sendStatus(404);
+        }
+
+        return res.status(200).json(task);
+    } catch (error) {
+        console.warn(error);
+        return res.sendStatus(500);
+    }
+});
 
 router.put('/:id', (req, res) => {});
 
