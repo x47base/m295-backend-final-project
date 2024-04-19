@@ -2,7 +2,8 @@
 Author: Samuel Spink
 
 ## Dokumentation
-Datei: .\src\docs\swagger.json
+Swagger HTML: .\src\docs\Swagger-Documentation.html
+Swagger Datei: .\src\docs\swagger.json
 Api: http://localhost:3000/api-docs
 
 ## Testing
@@ -12,6 +13,24 @@ Collection-Datei: .\src\docs\Insomnia_2024-04-19.json
 ## Git Logs
 Datei: .\GIT-LOGS.txt
 ```
+commit 33537aefb68827340d8a35b83b9bb924f5dab91e
+Author: Samuel Spink <dr.greenjet@gmail.com>
+Date:   Fri Apr 19 13:55:15 2024 +0200
+
+    docs: saved api-docs as Swagger-Documentation.html in .\src\docs
+
+commit 39385ea32b3508eb77948764a89eb312e4e08307
+Author: Samuel Spink <dr.greenjet@gmail.com>
+Date:   Fri Apr 19 13:49:58 2024 +0200
+
+    fix: status codes corrected
+
+commit 84d68b830b1d7be0ce17335a5051a26ec9fa4af8
+Author: Samuel Spink <dr.greenjet@gmail.com>
+Date:   Fri Apr 19 13:45:37 2024 +0200
+
+    docs: final commit
+
 commit a10264bfac014c6b2a0c97710d793a0576b95624
 Author: Samuel Spink <dr.greenjet@gmail.com>
 Date:   Fri Apr 19 13:44:47 2024 +0200
