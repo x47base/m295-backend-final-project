@@ -52,7 +52,35 @@ app.use('/tasks', tasks);
 
 /* Authentication */
 app.use('/login', bodyParser.json());
-app.post('/login', (req, res) => {});
+app.post('/login', (req, res) => {
+    const {username, password} = req.body;
+
+    if (!username || !password) {
+        return res.sendStatus(400);
+    }
+
+    if (username !== USERNAME && password !== PASSWORD) {
+        return res.sendStatus(401);
+    }
+
+    try {
+        const token = generateAccessToken({
+            username: USERNAME,
+        });
+
+        let tries = 0;
+        while (!req.session.ACCESS_TOKEN && tries < 3) {
+            req.session.ACCESS_TOKEN = token;
+            req.session.save();
+            tries++;
+        }
+
+        return res.status(200).send({ACCESS_TOKEN: token});
+    } catch (error) {
+        console.warn(error);
+        return res.sendStatus(500);
+    }
+});
 
 app.get('/verify', authenticateToken, (req, res) => {});
 
