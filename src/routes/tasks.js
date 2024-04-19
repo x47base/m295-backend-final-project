@@ -30,13 +30,13 @@ router.get('/', (req, res) => res.status(200).send(tasks));
 
 router.post('/', (req, res) => {
     if (req.body == {}) {
-        return res.sendStatus(400);
+        return res.sendStatus(422);
     }
 
     const {title, description, done, duedate} = req.body;
 
     if (!title || !description || !done || !duedate) {
-        return res.sendStatus(400);
+        return res.sendStatus(422);
     }
 
     const task = new Task(title, description, Boolean(done), Object(duedate));
@@ -51,7 +51,7 @@ router.post('/', (req, res) => {
 
 router.get('/:id', (req, res) => {
     if (!req.params.id) {
-        return res.sendStatus(400);
+        return res.sendStatus(422);
     }
 
     const id = parseInt(req.params.id);
@@ -72,7 +72,7 @@ router.get('/:id', (req, res) => {
 
 router.put('/:id', (req, res) => {
     if (!req.params.id || req.body == {}) {
-        return res.sendStatus(400);
+        return res.sendStatus(422);
     }
 
     const id = parseInt(req.params.id);
@@ -80,7 +80,7 @@ router.put('/:id', (req, res) => {
     const {title, description, done, duedate} = req.body;
 
     if (!title || !description || !done || !duedate) {
-        return res.sendStatus(400);
+        return res.sendStatus(422);
     }
 
     try {
@@ -106,7 +106,7 @@ router.put('/:id', (req, res) => {
 
 router.delete('/:id', (req, res) => {
     if (req.params.id === null) {
-        return res.sendStatus(400);
+        return res.sendStatus(422);
     }
 
     const id = parseInt(req.params.id);

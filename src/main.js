@@ -56,7 +56,7 @@ app.post('/login', (req, res) => {
     const {username, password} = req.body;
 
     if (!username || !password) {
-        return res.sendStatus(400);
+        return res.sendStatus(422);
     }
 
     if (username !== USERNAME && password !== PASSWORD) {
