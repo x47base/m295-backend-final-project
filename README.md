@@ -1,5 +1,5 @@
 # m295-backend-final-project
-Projekt: Modul 295 Final Project
+Project: Modul 295 Final Project
 Author: Samuel Spink
 
 ## How to Use
