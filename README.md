@@ -15,6 +15,3 @@ Api: [API-Endpoint-Link](http://localhost:3000/api-docs)
 ## Testing
 Tool: `Insomnia`
 Request-Collection-File: `.\src\docs\Insomnia_2024-04-19.json`
-
-## Git Logs
-File: `.\VCS.txt`
