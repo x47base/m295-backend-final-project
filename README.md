@@ -23,8 +23,8 @@ Error-Request-Collection-File: `.\src\docs\Insomnia_2024-04-19-error-cases.json`
 
 ## Docker Image
 ```BASH
-docker build -t ghcr.io/x47base/taskapp:v1 .
-docker push ghcr.io/x47base/taskapp:v1
+docker build -t ghcr.io/x47base/taskapp:v2 .
+docker push ghcr.io/x47base/taskapp:v2
 ```
 
 ## Kubernetes Setup
@@ -39,4 +39,17 @@ deployment.apps/taskapp-deployment created
 service/taskapp-service configured
 horizontalpodautoscaler.autoscaling/taskapp configured
 route.route.openshift.io/taskapp configured
+NAME        HOST/PORT                                                       PATH   SERVICES          PORT        TERMINATION     WILDCARD
+taskapp     taskapp-243635-samspi.apps.exoscale-ch-gva-2-0.appuio.cloud            taskapp-service   8080        edge/Redirect   None
 ```
+
+## Tech-Stack:
+### Container
+- Docker
+- Kubernetes
+
+### API-Endpoints
+- ExpressJS
+- JsonWebToken
+- Swagger-UI-Express
+- Swagger-Autogen
