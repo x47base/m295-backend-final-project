@@ -98,4 +98,4 @@ app.delete('/logout', authenticateToken, (req, res) => {
 app.use('/api-docs', swaggerUi.serve, swaggerUi.setup(swaggerDocument));
 
 /* Express Endpoints Listen */
-app.listen(PORT, () => console.log(`alive on http://localhost:${PORT}`));
+app.listen(PORT, '0.0.0.0', () => console.log(`alive on http://0.0.0.0:${PORT}`));
