@@ -1,0 +1,17 @@
+apiVersion: route.openshift.io/v1
+kind: Route
+metadata:
+  labels:
+    app: taskapp
+    sandbox: learn-kubernetes
+    learn-kubernetes: taskapp
+  name: taskapp
+spec:
+  port:
+    targetPort: 8080
+  to:
+    kind: Service
+    name: taskapp-service
+  tls:
+    termination: edge
+    insecureEdgeTerminationPolicy: Redirect
