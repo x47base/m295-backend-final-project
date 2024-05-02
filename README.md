@@ -20,3 +20,23 @@ Tool: `Insomnia`
 Request-Collection-File: `.\src\docs\Insomnia_2024-04-19.json`
 
 Error-Request-Collection-File: `.\src\docs\Insomnia_2024-04-19-error-cases.json`
+
+## Docker Image
+```BASH
+docker build -t ghcr.io/x47base/taskapp:v1 .
+docker push ghcr.io/x47base/taskapp:v1
+```
+
+## Kubernetes Setup
+```BASH
+kubectl apply -f k8s/webapp-deployment.yaml
+kubectl apply -f k8s/webapp-route.yaml
+kubectl get routes
+```
+### Output:
+```BASH
+deployment.apps/taskapp-deployment created
+service/taskapp-service configured
+horizontalpodautoscaler.autoscaling/taskapp configured
+route.route.openshift.io/taskapp configured
+```
